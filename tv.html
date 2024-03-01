@@ -1,77 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<html>
+ <head>
+ <title>RTCS Live Camara</title>
+ 
 <style>
 .top
 {
     width:1280px;
-    height:120px;
-    background:#FF165D;
+    height:720px;
+    background-image:url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGwb5expVb-XaIX0w7EorYoYcdMftiLIq72j3Sk9s4z12SFyj-KeTgv_rXd7sS3JA1CzQIHC5AGEmQTWAbSyIjzUEjVEAOfeyPDye1yO97GTcWTduXpqaROGaUn2MP0iNAME4j3CS4rT0M4tWBbXZB2TL0dMrmYOAUC2dL_1RQFvb8B-r6zssSGSYBkiho/s1600/20240301_232520.png");
     z-index:100;
     position:absolute;
-    top:0;
-    left:0;
+    top:10;
+    left:8;
 }
 
- .typing-text {
+.typing-text {
      width:1280px;
      height:120px;
      color: #ffffff;
      border: solid 0px #A8A8A8;
      font-weight: bold;
-     text-align: center;
      font-family: Arial Black, Helvetica, sans-serif;
      overflow: auto;
-     background-color: transparent;
      font-size: 28px;
      padding: 5px;
      height: 120px;
      width: 1280px;
      outline: none;
      resize: none;
-     position:absolute;
 }
+
 </style>
 
-    
-
-    <title>TV Landing Page</title>
-  </head>
-  <body>
-<div class="video_container">
+ </head>
+ <body>
+ <div class="video_container">
 <iframe width="1280" height="720" src="https://c.rtcs.live/stream" frameborder="0" allowfullscreen></iframe>
+<div class="top">
+<textarea id="typing-text" readonly></textarea>
 </div>
-<div class="top"></div>
-<center><textarea id="typing-text" readonly></textarea></center>
-
-    
-    <script>
-      $('iframe','.video_container').attr('width',1280);
-$('iframe','.video_container').attr('height',720);
-$('object','.video_container').attr('width',1280);
-$('object','.video_container').attr('height',720);
-$('embed','.video_container').attr('width',1280);
-$('embed','.video_container').attr('height',720);
-var src=$('iframe','.video_container').attr('src');
-if(src.indexOf('?')==-1)
-{
- src=src+'?wmode=transparent';
-}
-else
-{
- src=src+'&wmode=transparent';
-}
-$('iframe','.video_container').attr('src',src);
-$('object','.video_container').append('<param name="wmode" value="opaque"></param>');
-$('object','.video_container').find("embed").attr('wmode', 'opaque');
-$('object','.video_container').each(function(){
-    this.innerHTML=this.innerHTML+'';
-});
-    </script>
+</div>
 
 <script>
 (function () {
@@ -108,5 +77,6 @@ StartTyping();
 })();
 </script>
 
-  </body>
-</html>
+
+ </body>
+<html>
