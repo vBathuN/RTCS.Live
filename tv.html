@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<style>
+.top
+{
+    width:1280px;
+    height:120px;
+    background:#FF165D;
+    z-index:100;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+ .typing-text {
+     width:1280px;
+     height:120px;
+     color: #ffffff;
+     border: solid 0px #A8A8A8;
+     font-weight: bold;
+     text-align: center;
+     font-family: Arial Black, Helvetica, sans-serif;
+     overflow: auto;
+     background-color: transparent;
+     font-size: 28px;
+     padding: 5px;
+     height: 120px;
+     width: 1280px;
+     outline: none;
+     resize: none;
+     position:absolute;
+}
+</style>
+
+    
+
+    <title>TV Landing Page</title>
+  </head>
+  <body>
+<div class="video_container">
+<iframe width="1280" height="720" src="https://c.rtcs.live/stream" frameborder="0" allowfullscreen></iframe>
+</div>
+<div class="top"></div>
+<center><textarea id="typing-text" readonly></textarea></center>
+
+    
+    <script>
+      $('iframe','.video_container').attr('width',1280);
+$('iframe','.video_container').attr('height',720);
+$('object','.video_container').attr('width',1280);
+$('object','.video_container').attr('height',720);
+$('embed','.video_container').attr('width',1280);
+$('embed','.video_container').attr('height',720);
+var src=$('iframe','.video_container').attr('src');
+if(src.indexOf('?')==-1)
+{
+ src=src+'?wmode=transparent';
+}
+else
+{
+ src=src+'&wmode=transparent';
+}
+$('iframe','.video_container').attr('src',src);
+$('object','.video_container').append('<param name="wmode" value="opaque"></param>');
+$('object','.video_container').find("embed").attr('wmode', 'opaque');
+$('object','.video_container').each(function(){
+    this.innerHTML=this.innerHTML+'';
+});
+    </script>
+
+<script>
+(function () {
+   var CharacterPos = 0;
+   var MsgBuffer = "";
+   var TypeDelay = 15; 
+   var NxtMsgDelay = 8000;
+   var MsgIndex = 0;
+   var delay;
+   var MsgArray = ["பங்குச்சந்தை என்றால் என்ன? பங்குச்சந்தையில் முதலீடு செய்வது எப்படி?","பங்குச்சந்தை தொடர்பான சந்தேகங்களுக்கு விளக்கம் அளிக்கிறார் பத்மநாதன்","Demat அக்கவுண்ட் என்றால் என்ன? Demat அக்கவுண்ட் தொடங்குவது எப்படி?","போர் மரபில் வழிபாடுகளும் நம்பிக்கைகளும் தோன்றி  யிருக்கின்றன என்பது தொல்காப்பியத்தில் காணும் வழிபாட்டு மரபு கோட்பாடுகளாகும். பண்டைய காலப் போர்மரபில் வழிபாட்டுச் சாங்கியங்கள் நிகழ்ந்துள்ளதைத் தொல்காப்பியம் உறுதி செய்கிறது."];
+
+
+   function StartTyping() {
+      var id = document.getElementById("typing-text");
+      if (CharacterPos != MsgArray[MsgIndex].length) {
+         MsgBuffer  = MsgBuffer + MsgArray[MsgIndex].charAt(CharacterPos);
+         id.value = MsgBuffer+".";
+         delay = TypeDelay;
+         id.scrollTop = id.scrollHeight; 
+      } else {
+         delay = NxtMsgDelay;
+         MsgBuffer   = "";
+         CharacterPos = -1;
+         if (MsgIndex!=MsgArray.length-1){
+           MsgIndex++;
+         }else {
+           MsgIndex = 0;
+         }
+       }
+       CharacterPos++;
+       setTimeout(StartTyping,delay);
+   }
+StartTyping();
+})();
+</script>
+
+  </body>
+</html>
