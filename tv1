@@ -1,0 +1,34 @@
+<html>
+ <head>
+ <title>RTCS Live Camara</title>
+ 
+<style>
+.body
+{
+    width:1280px;
+    height:720px;
+}
+
+.top
+{
+    width:1280px;
+    height:720px;
+    background-image:url("images/awareonoverlay.png");
+    z-index:100;
+    position:absolute;
+    top:8;
+    left:8;
+}
+
+</style>
+
+ </head>
+ <body>
+ <div class="video_container">
+<iframe allow="autoplay" width="1280" height="720" src="https://c.rtcs.live/stream" frameborder="0" allowfullscreen></iframe>
+<div class="top">
+</div>
+</div>
+
+ </body>
+<html>
