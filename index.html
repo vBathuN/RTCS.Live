@@ -18,7 +18,16 @@
 <script type="text/javascript" src="js/tabs.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
 <!--[if lt IE 7]> 
- 		
+ 	<script type="text/javascript">
+		document.onkeydown = function (event) {
+		     event = (event || window.event);
+		     if (event.keyCode == 123 || event.keyCode == 18)
+		     {
+		           return false;
+		     }
+		}
+		document.addEventListener('contextmenu', event => event.preventDefault());
+	</script>	
 <![endif]-->
 </head>
 <body id="page1">
