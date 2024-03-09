@@ -16,22 +16,19 @@
     left:8;
 }
 
-/* No JavaScript Fallback */
-/* If you are not using another script, such as Modernizr, make sure you
- * include js that eliminates this class on page load */
-.no-js .slides > li:first-child {
-  display: block;
-}
-
 /* Clearfix for the .slides element */
 .slides:after {
   content: ".";
   display: block;
   clear: both;
   visibility: hidden;
-  display: none;
 }
-	
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {
+  display: block;
+}
 /* FlexSlider Default Theme
 *********************************/
 .flexslider {
@@ -51,7 +48,7 @@
  <body>
 <div class="video_container">
 <iframe allow="autoplay" width="1280" height="720" src="https://c.rtcs.live/stream" frameborder="0" allowfullscreen></iframe>
-<div class="overlay"> <div class="flexslider" height="100" style="color:#ffffff;font-size:180%;font-family: Arial Black, Helvetica, sans-serif;font-weight:bold;position:relative;overflow:hidden;">
+<div class="overlay"> <div class="flexslider" height="100" style="color:#ffffff;font-size:180%;font-family: Arial Black, Helvetica, sans-serif;font-weight: bold;position:relative;overflow:hidden;">
 	<center><ul class="slides">
 
     <li>
